@@ -1,3 +1,9 @@
+# Serveur
+
+```
+symfony server:start
+```
+
 # Entity
 
 ## Create entity
@@ -84,3 +90,7 @@ php bin/console make:crud Product
 # Query db
 
 php bin/console doctrine:query:sql 'SELECT \* FROM product'
+
+# Fixture
+
+php bin/console doctrine:fixtures:load
