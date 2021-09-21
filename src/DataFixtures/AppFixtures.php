@@ -19,6 +19,8 @@ class AppFixtures extends Fixture
             $post->setTitle($faker->text("30"));
             $post->setContent($faker->text(1000));
             $post->setAuthor(1);
+            $post->setType($faker->randomElement(['science', 'outdoor', 'sport', 'dum']));
+            $post->setCreatedAt($faker->dateTimeBetween('-1 years', 'now'));
             $post->setCoverPic("https://picsum.photos/id/${i}/300/200");
             $manager->persist($post);
         }

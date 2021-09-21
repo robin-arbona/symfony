@@ -26,6 +26,22 @@ class PostController extends AbstractController
     }
 
     /**
+     * @Route("/{type}/{offset}/{limit}", name="posts_show", methods={"GET"})
+     */
+    public function showPosts(PostRepository $postRepository, Request $request): Response
+    {
+        $type = ['type' => $request->get('type')];
+        $orderBy = ['created_at' => 'DESC'];
+        $offset = $request->get('offset');
+        $limit = $request->get('limit');
+
+
+        $posts = $postRepository->findBy($type, $orderBy, $limit, $offset);
+
+        return $this->json($posts);
+    }
+
+    /**
      * @Route("/new", name="post_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -83,7 +99,7 @@ class PostController extends AbstractController
      */
     public function delete(Request $request, Post $post): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$post->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $post->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($post);
             $entityManager->flush();
