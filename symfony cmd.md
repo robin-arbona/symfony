@@ -91,6 +91,30 @@ php bin/console make:crud Product
 
 php bin/console doctrine:query:sql 'SELECT \* FROM product'
 
-# Fixture
+# Bundle
+
+## Fixture
+
+```
+composer require --dev doctrine/doctrine-fixtures-bundle
+php bin/console make:fixtures
 
 php bin/console doctrine:fixtures:load
+```
+
+or load specific fixture
+
+```
+php bin/console doctrine:fixtures:load --group=UserFixture
+```
+
+# Security
+
+Creation d'utilisateurs / droit
+ressource :
+http://www.lsis.org/elmouelhia/courses/php/sf/coursSymfonyUtilisateurs.pdf
+
+```
+composer require symfony/security-bundle
+php bin/console make:user
+```

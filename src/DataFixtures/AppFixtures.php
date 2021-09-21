@@ -7,8 +7,11 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory as Faker;
 
+
 class AppFixtures extends Fixture
 {
+
+
     public function load(ObjectManager $manager)
     {
         $faker = Faker::create();
@@ -24,6 +27,9 @@ class AppFixtures extends Fixture
             $post->setCoverPic("https://picsum.photos/id/${i}/300/200");
             $manager->persist($post);
         }
+
+
+
 
 
         $manager->flush();
