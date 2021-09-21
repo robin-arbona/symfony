@@ -118,3 +118,16 @@ http://www.lsis.org/elmouelhia/courses/php/sf/coursSymfonyUtilisateurs.pdf
 composer require symfony/security-bundle
 php bin/console make:user
 ```
+
+# Debug
+
+```
+composer require --dev symfony/debug-bundle
+composer require --dev symfony/var-dumper
+```
+
+et puis
+
+```
+dump($variable)
+```
