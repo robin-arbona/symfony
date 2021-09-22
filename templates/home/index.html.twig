@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% import "component.html.twig" as component %}
+{% import "_card.html.twig" as component %}
 
 
 {% block title %}Hello HomeController!{% endblock %}
@@ -16,8 +16,8 @@
     
     <div class="row">
     {% for post in posts %}
-            {{ component.card(post.title|e|title, post.content[:100], post.coverPic) }}
-        {% endfor %}
+        {{ component.card(post.id|url_encode, post.title|e|title, post.content[:100], post.coverPic) }}
+    {% endfor %}
     </div>
 </div>
 {% endblock %}

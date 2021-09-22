@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <img src="{{ post.coverPic }}" alt="Cover pic" class="cover_pic">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+{% endblock %}
+    

@@ -1,10 +1,10 @@
-{% macro card(title,content,coverPic) %}
-  <div class="card" style="width: 14rem;">
+{% macro card(id,title,content,coverPic) %}
+<div class="card" >
   <img src="{{ coverPic }}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
     <p class="card-text">{{ content }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="{{ path('post', {id: id} )}}" >I want more</a>
   </div>
 </div>
   
