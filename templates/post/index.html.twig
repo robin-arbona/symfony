@@ -25,8 +25,8 @@
                 <td>{{ post.author }}</td>
                 <td>{{ post.coverPic }}</td>
                 <td>
-                    <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+                    <a class="button" href="{{ path('post_show', {'id': post.id}) }}">show</a>
+                    <a class="button" href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,7 +37,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('post_new') }}">Create new</a>
+    <a class="button" href="{{ path('post_new') }}">Create new</a>
 
-    <a href="{{ path('admin') }}">Back to admin control pannel</a>
+    <a class="button" href="{{ path('admin') }}">Back to admin control pannel</a>
 {% endblock %}

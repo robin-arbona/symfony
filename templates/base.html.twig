@@ -1,3 +1,5 @@
+{% import "_navbar.html.twig" as component %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,27 +15,17 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
 
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('style/main.css') }}">
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="{{ path('home') }}">Home</a></li>
-                    {% if not is_granted('ROLE_USER') %}
-                        <li><a href="{{ path('app_login') }}">Log in</a></li>
-                    {% endif %}
-                    {% if is_granted('ROLE_USER') %}
-                        <li><a href="{{ path('app_logout') }}">Log out</a></li>
-                    {% endif %}
-                   
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <li><a href="{{ path('admin') }}">Admin</a></li>
-                    {% endif %}
-
-                </ul>
-            </nav>
+            {{ component.navbar() }}
         </header>
+        <main class="wrapper">
         {% block body %}{% endblock %}
+        </main>
     </body>
 </html>

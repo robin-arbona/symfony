@@ -31,10 +31,16 @@ class UserFixtures extends Fixture
 
         $faker = Faker::create();
         $user2 = new User();
-        $user2->setEmail($faker->email);
+        $user2->setEmail('boyer.abbey@gutkowski.com');
         $user2->setRoles(['ROLE_USER']);
         $user2->setPassword($this->passwordHasher->hashPassword($user2, 'user'));
         $manager->persist($user2);
+
+        $user3 = new User();
+        $user3->setEmail($faker->email);
+        $user3->setRoles(['ROLE_USER']);
+        $user3->setPassword($this->passwordHasher->hashPassword($user3, 'user'));
+        $manager->persist($user3);
 
         $manager->flush();
     }

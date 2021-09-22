@@ -27,10 +27,7 @@ class Post
      */
     private $content;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $author;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -46,6 +43,11 @@ class Post
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts",cascade={"persist"})
+     */
+    private $author;
 
     public function getTitle(): ?string
     {
@@ -71,17 +73,7 @@ class Post
         return $this;
     }
 
-    public function getAuthor(): ?int
-    {
-        return $this->author;
-    }
 
-    public function setAuthor(int $author): self
-    {
-        $this->author = $author;
-
-        return $this;
-    }
 
     public function getCoverPic(): ?string
     {
@@ -122,5 +114,17 @@ class Post
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
+
+        return $this;
     }
 }

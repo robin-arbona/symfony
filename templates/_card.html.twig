@@ -1,11 +1,13 @@
 {% macro card(id,title,content,coverPic) %}
-<div class="card" >
-  <img src="{{ coverPic }}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{ title }}</h5>
-    <p class="card-text">{{ content }}</p>
-    <a href="{{ path('post', {id: id} )}}" >I want more</a>
+  <a class="card-link" href="{{ path('post', {id: id} )}}" >
+  <div class="card" >
+      <img src="{{ coverPic }}" class="card__img-top" alt="...">
+      <div class="card__body">
+        <h2 class="card-title">{{ title }}</h2>
+        <p class="card-text">{{ content }}...</p>
+      </div>
+    
   </div>
-</div>
+  </a>
   
 {% endmacro %}

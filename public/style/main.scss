@@ -1,0 +1,113 @@
+$card-height: calc(50vh - 100px);
+$main-color: #2200ff;
+$secondary-color: #000207;
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: $main-color;
+    font-size:75px;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    background: transparent;
+    color: $secondary-color;
+}
+
+.button {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-color;
+}
+  
+.nav {
+    a {
+        text-transform: uppercase;
+        color: $main-color;
+    }
+    border-bottom: 1px solid $main-color;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.85);
+    z-index: 10;
+}
+  
+  
+ 
+  
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav li {
+    list-style-type: none;
+    padding: 30px;
+  }
+  
+  .wrapper {
+    
+    margin: 1em auto;
+    margin-top: 150px;
+    max-width: 900px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
+  }
+  
+  .card {
+      position: relative;
+      margin:  60px 0;
+      height: $card-height;
+      border: px solid #ccc;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      &__img-top {
+          font: 1em sans-serif;
+          position: absolute;
+          object-fit: cover;
+          height: $card-height;
+          width: 50%;
+      }
+      &__body {
+          position: absolute;
+          right: 0;
+          background-color: transparent;
+          width: 50%;
+          height: $card-height;
+      }
+
+      &-title{
+        position: relative;
+        top: 0;
+        padding: 20px;
+        margin: 0;
+        background-color: rgba($color: #ffffff, $alpha: 0.7);
+        color: $main-color;
+        text-transform: uppercase;
+      }
+
+      &-text{
+        padding: 20px;
+      }
+  }
+
+  .post {
+      &__img {
+ 
+          padding-right: 20px;
+          float: left;
+      }
+      &__title {
+        font-size: 70px;
+      }
+      &__content {
+        text-align: justify;
+        line-height: 35px;
+    }
+  }

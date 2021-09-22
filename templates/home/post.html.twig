@@ -2,9 +2,12 @@
 
 {% block body %}
 
-    <img src="{{ post.coverPic }}" alt="Cover pic" class="cover_pic">
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    <article class="post">
+        <h1 class="post__title">{{ post.title }}</h1>
+        <img class="post__img" src="{{ post.coverPic }}" alt="Cover pic" class="cover_pic">
+        <p class="post__content">{{ post.content }}</p>
+        <a class="button" href="{{ path('home') }}" >Back Home</a>
+    </article>
 
 {% endblock %}
     
