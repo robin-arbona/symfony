@@ -14,7 +14,7 @@
     
     <div class="row">
     {% for post in posts %}
-        {{ component.card(post.id|url_encode, post.title|e|title, post.content[:100], post.coverPic) }}
+        {{ component.card(post) }}
     {% endfor %}
     </div>
 {% endblock %}

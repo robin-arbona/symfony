@@ -1,12 +1,12 @@
-{% macro card(id,title,content,coverPic) %}
-  <a class="card-link" href="{{ path('post', {id: id} )}}" >
+{% macro card(post) %}
+  <a class="card-link" href="{{ path('post', {id: post.id|url_encode} )}}" >
   <div class="card" >
-      <img src="{{ coverPic }}" class="card__img-top" alt="...">
+      <img src="{{ post.coverPic }}" class="card__img-top" alt="...">
       <div class="card__body">
-        <h2 class="card-title">{{ title }}</h2>
-        <p class="card-text">{{ content }}...</p>
-      </div>
-    
+        <h2 class="card-title">{{ post.title|e|title }}</h2>
+        <p class="card-text">{{ post.content[:100]|e }}... </p>
+        <p class="card-footer">Written on {{ post.createdAt|date('d/m/Y') }} by <a href="{{ post.author.email|e }}">{{ post.author.email|e }}</a> </p>
+      </div>    
   </div>
   </a>
   
