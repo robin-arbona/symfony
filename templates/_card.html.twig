@@ -5,7 +5,7 @@
       <div class="card__body">
         <h2 class="card-title">{{ post.title|e|title }}</h2>
         <p class="card-text">{{ post.content[:100]|e }}... </p>
-        <p class="card-footer">Written on {{ post.createdAt|date('d/m/Y') }} by <a href="{{ post.author.email|e }}">{{ post.author.email|e }}</a> </p>
+        <p class="card-footer">Written on {{ post.createdAt|date('d/m/Y') }} by <u>{{ post.author.email|e }}</u> </p>
       </div>    
   </div>
   </a>

@@ -32,6 +32,10 @@ a {
 .nav a {
   text-transform: uppercase;
   color: #2200ff;
+  transition-duration: 0.5s;
+}
+.nav a:hover {
+  color: #000207;
 }
 
 nav ul {
@@ -55,7 +59,7 @@ nav li {
 .card {
   position: relative;
   margin: 60px 0;
-  height: calc(50vh - 100px);
+  height: calc(50vh - 50px);
   border: px solid #ccc;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -63,7 +67,7 @@ nav li {
   font: 1em sans-serif;
   position: absolute;
   object-fit: cover;
-  height: calc(50vh - 100px);
+  height: calc(50vh - 50px);
   width: 50%;
 }
 .card__body {
@@ -71,7 +75,7 @@ nav li {
   right: 0;
   background-color: transparent;
   width: 50%;
-  height: calc(50vh - 100px);
+  height: calc(50vh - 50px);
 }
 .card-title {
   position: relative;
@@ -85,6 +89,10 @@ nav li {
 .card-text {
   padding: 20px;
 }
+.card-footer {
+  padding: 20px;
+  font-size: 0.8rem;
+}
 
 .post__img {
   padding-right: 20px;
@@ -96,4 +104,8 @@ nav li {
 .post__content {
   text-align: justify;
   line-height: 35px;
+}
+.post__author {
+  margin: 50px 0;
+  font-style: italic;
 }
